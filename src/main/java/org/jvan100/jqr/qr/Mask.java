@@ -7,7 +7,7 @@ import org.jvan100.jqr.util.Pair;
 abstract class Mask {
 
     @SuppressWarnings("unchecked")
-    private static BiPredicate<Integer, Integer>[] masks = new BiPredicate[8];
+    private static final BiPredicate<Integer, Integer>[] masks = new BiPredicate[8];
 
     static {
         masks[0] = ((row, col) -> (row + col) % 2 == 0);

@@ -52,13 +52,12 @@ public class Controller {
 
     @FXML
     private void inputStringUpdate() {
-        if (inputString.getText().isEmpty()) generateBtn.setDisable(true);
-        else generateBtn.setDisable(false);
+        generateBtn.setDisable(inputString.getText().isEmpty());
     }
 
     @FXML
     private void generateClicked() {
-        Level level;
+        final Level level;
 
         switch (ecDropdown.getValue()) {
             case "L":
@@ -91,7 +90,7 @@ public class Controller {
 
         graphicsContext.clearRect(0, 0, qrWidth, qrWidth);
 
-        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(300), actionEvent -> {
+        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(500), actionEvent -> {
             final byte[][] qr = qrStages.get(timelineIndex.getAndIncrement());
 
             for (int row = 0; row < numModules; row++) {

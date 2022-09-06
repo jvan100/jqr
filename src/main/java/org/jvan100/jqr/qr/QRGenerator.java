@@ -11,7 +11,8 @@ import java.util.stream.Collectors;
 public abstract class QRGenerator {
 
     public static void main(String[] args) {
-        generateQR("hello there frienddshsdfkjhdsfkhdfskljhdsafkljhdfsakjdhfskjdsfhaklfdhslkjdfhskljshlkfdsjhljkdsfgsahkdsfhjkfsdhdkflsajhdflsakjhdfakslhadsfkjhdfsakljhdsfakjhdfsalkjhdfsaklhdsafkljhdsfalkjdfhsalkfjdsa", Level.L, true);
+        final List<byte[][]> stages = generateQR("www.google.com", Level.M);
+        System.out.println(Arrays.deepToString(stages.get(stages.size() - 1)));
         //generateQR("hello there", Level.L, true);
     }
 

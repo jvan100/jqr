@@ -30,12 +30,7 @@ abstract class Utils {
     }
 
     static byte[][] arrayCopy(byte[][] arr) {
-        byte[][] newArr = new byte[arr.length][arr[0].length];
-
-        for (int i = 0; i < arr.length; i++)
-            newArr[i] = Arrays.copyOf(arr[i], arr[i].length);
-
-        return newArr;
+        return Arrays.stream(arr).map(byte[]::clone).toArray(byte[][]::new);
     }
 
 }
